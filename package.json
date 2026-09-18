@@ -1,0 +1,40 @@
+{
+  "name": "agenthome",
+  "version": "0.1.0",
+  "description": "Portable configuration layer for AI coding harnesses",
+  "type": "module",
+  "bin": {
+    "agenthome": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json",
+    "test": "tsx --test \"test/**/*.test.ts\"",
+    "test:unit": "tsx --test \"test/unit/**/*.test.ts\"",
+    "test:e2e": "tsx --test \"test/e2e/**/*.test.ts\"",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "jsonc-parser": "^3.3.1",
+    "yaml": "^2.8.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.5",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

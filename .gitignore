@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# AgentHome / harness-generated local state
+.agenthome/
+.agenthome.yaml
+.agents/
+.pi/
+.opencode/
+
+# Generated harness config files
+AGENTS.md
+opencode.json
+opencode.jsonc

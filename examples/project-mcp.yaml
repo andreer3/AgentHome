@@ -1,0 +1,18 @@
+# Project MCP registry (copy to <project>/.agenthome/mcp.yaml).
+# These servers are only compiled into the project harness config
+# (`agenthome apply <target> --scope project`). Global servers live in
+# ~/.agenthome/mcp/registry.yaml and are inherited by every project.
+servers:
+  project-db:
+    type: local
+    command: [node, ./tools/mcp/db.js]
+    enabled: true
+    lifecycle: lazy
+
+  project-api:
+    type: remote
+    url: https://api.example.com/mcp
+    headers:
+      X-Client: agenthome-example
+    lifecycle: eager
+    targets: [opencode, pi]
